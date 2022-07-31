@@ -1,39 +1,31 @@
--- Just an example, supposed to be placed in /lua/custom/
-
 local M = {}
-
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
-
-M.ui = {
-  theme = "ayu-dark",
-}
-
-M.options = {
-  user = function()
-    require "custom.options"
-  end,
-}
+local override = require "custom.override"
 
 M.plugins = {
-  user = require "custom.plugins",
   remove = {
     "andymass/vim-matchup",
     "NvChad/nvterm",
   },
-  options = {
-    --lspconfig = {
-    --  setup_lspconf = "custom.plugins.configs.lspconfig",
-    --},
+  override = {
+    ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
+    ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
+    ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
+    ["williamboman/mason.nvim"] = override.mason,
+    ["goolord/alpha-nvim"] = override.alpha,
   },
+  user = require "custom.plugins",
+}
+
+M.options = {
+  require "custom.options",
+}
+
+M.ui = {
+  theme = "ayu-dark",
+  hl_add = require("custom.highlights").new_hlgroups,
+  hl_override = require("custom.highlights").overriden_hlgroups,
 }
 
 M.mappings = require "custom.mappings"
-
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-  callback = function()
-    vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
-  end,
-})
 
 return M

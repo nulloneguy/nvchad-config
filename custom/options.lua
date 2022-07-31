@@ -16,19 +16,14 @@ opt.scrolloff = 12
 
 opt.title = true
 opt.clipboard = "unnamedplus"
-opt.cul = true -- cursor line
-opt.guifont = "SpaceMono Nerd Font:h12"
+opt.cul = false -- cursor line
+opt.guifont = "JetBrains Mono:h8"
 
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.smartindent = true
-
-opt.fillchars = { eob = " " }
-opt.ignorecase = true
-opt.smartcase = true
-opt.mouse = "a"
 
 -- Numbers
 opt.number = true
@@ -41,7 +36,6 @@ opt.shortmess:append "sI"
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
-opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
 
@@ -49,9 +43,3 @@ opt.undofile = true
 opt.swapfile = false
 opt.writebackup = false
 opt.updatetime = 0
-
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
-
-g.mapleader = " "

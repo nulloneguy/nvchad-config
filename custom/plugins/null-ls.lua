@@ -2,24 +2,24 @@ local present, null_ls = pcall(require, "null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 if not present then
-   return
+  return
 end
 
 local b = null_ls.builtins
 
 local sources = {
-   -- formatting
-   b.formatting.prettierd,
-   b.formatting.stylua,
-   b.formatting.shfmt,
 
-   -- completion
-   b.completion.luasnip,
+  -- webdev stuff
+  b.formatting.deno_fmt,
+  b.formatting.prettierd.with { filetypes = { "html", "markdown", "css", "vue" } },
 
-   -- diagnostics
-   --b.diagnostics.eslint_d,
-   b.diagnostics.tsc,
-   b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+  -- Lua
+  b.formatting.stylua,
+
+  -- Shell
+  b.formatting.shfmt,
+  b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+
 }
 
 null_ls.setup {

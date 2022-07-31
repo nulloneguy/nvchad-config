@@ -1,38 +1,51 @@
 return {
+  -- autoclose tags in html, jsx etc
+  ["windwp/nvim-ts-autotag"] = {
+    ft = { "html", "javascriptreact", "" },
+    after = "nvim-treesitter",
+    config = function()
+      require("custom.plugins.smolconfigs").autotag()
+    end,
+  },
 
+  -- format & linting
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
-      require "custom.plugins.configs.null-ls"
+      require "custom.plugins.null-ls"
     end,
   },
 
-  ["goolord/alpha-nvim"] = { -- start screen
+  ["fedepujol/move.nvim"] = {
+    config = function()
+      require("custom.plugins.smolconfigs").move()
+    end,
+  },
+
+  -- dim inactive windows
+  ["andreadev-it/shade.nvim"] = {
+    module = "shade",
+    config = function()
+      require("custom.plugins.smolconfigs").shade()
+    end,
+  },
+
+  ["goolord/alpha-nvim"] = {
     disable = false,
-    config = function()
-      require "custom.plugins.configs.alpha"
-    end,
-  },
-
-  ["wakatime/vim-wakatime"] = {},
-
-  ["windwp/nvim-ts-autotag"] = {
-    ft = { "html", "javascriptreact", "javascriptvue" },
-    after = "nvim-treesitter",
-    config = function()
-      require("custom.plugins.configs.smolconfigs").autotag()
-    end,
   },
 
   ["monaqa/dial.nvim"] = {},
 
-  ["fedepujol/move.nvim"] = {
-    config = function()
-      require("custom.plugins.configs.smolconfigs").move()
-    end,
-  },
-
   ["haringsrob/nvim_context_vt"] = {},
 
-  ["antonk52/bad-practices.nvim"] = {},
+  ["wakatime/vim-wakatime"] = {},
+
+  ["rafamadriz/friendly-snippets"] = {},
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
+  },
 }
