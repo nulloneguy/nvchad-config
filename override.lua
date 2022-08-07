@@ -12,7 +12,6 @@ M.treesitter = {
     "typescript",
     "vue",
     "json",
-    "toml",
     "markdown",
     "bash",
     "lua",
@@ -45,6 +44,7 @@ M.blankline = {
     "TelescopeResults",
     "nvchad_cheatsheet",
     "lsp-installer",
+    "mason",
     "",
   },
 }

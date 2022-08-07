@@ -1,10 +1,10 @@
 return {
   -- autoclose tags in html, jsx etc
   ["windwp/nvim-ts-autotag"] = {
-    ft = { "html", "javascriptreact", "" },
+    ft = { "html", "javascriptreact", "javascriptvue" },
     after = "nvim-treesitter",
     config = function()
-      require("custom.plugins.smolconfigs").autotag()
+      require("custom.plugins.configs.smolconfigs").autotag()
     end,
   },
 
@@ -12,13 +12,13 @@ return {
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
-      require "custom.plugins.null-ls"
+      require "custom.plugins.configs.null-ls"
     end,
   },
 
   ["fedepujol/move.nvim"] = {
     config = function()
-      require("custom.plugins.smolconfigs").move()
+      require("custom.plugins.configs.smolconfigs").move()
     end,
   },
 
@@ -26,7 +26,14 @@ return {
   ["andreadev-it/shade.nvim"] = {
     module = "shade",
     config = function()
-      require("custom.plugins.smolconfigs").shade()
+      require("custom.plugins.configs.smolconfigs").shade()
+    end,
+  },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.configs.lspconfig"
     end,
   },
 
@@ -41,11 +48,4 @@ return {
   ["wakatime/vim-wakatime"] = {},
 
   ["rafamadriz/friendly-snippets"] = {},
-
-  ["neovim/nvim-lspconfig"] = {
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
-    end,
-  },
 }

@@ -2,14 +2,7 @@ local M = {}
 
 M.disabled = {
   n = {
-    ["<leader>h"] = "",
-    ["<C-c>"] = "", -- disable copy all
-  },
-}
-
-M.treesitter = {
-  n = {
-    ["<leader>cu"] = { "<cmd> TSCaptureUnderCursor <CR>", "  find media" },
+    ["<C-c>"] = "",
   },
 }
 
@@ -42,7 +35,6 @@ M.dial = {
       end,
     },
   },
-  v = {},
 }
 
 M.move = {
