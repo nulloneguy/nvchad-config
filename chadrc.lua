@@ -28,14 +28,9 @@ M.plugins = {
   user = require "custom.plugins",
 }
 
-M.options = {
-  require "custom.options",
-}
-
 M.ui = {
   theme = "ayu-dark",
   theme_toggle = { "ayu-dark", "one_light" },
-  transparency = false,
   hl_add = require("custom.highlights").new_hlgroups,
   hl_override = require("custom.highlights").overriden_hlgroups,
 }
