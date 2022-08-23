@@ -1,24 +1,6 @@
 -- neorg icons
 local M = {}
 
-M.todo = {
-  pending = {
-    icon = "",
-  },
-  uncertain = {
-    icon = "?",
-  },
-  urgent = {
-    icon = "",
-  },
-  on_hold = {
-    icon = "",
-  },
-  cancelled = {
-    icon = "",
-  },
-}
-
 M.list = {
   level_1 = {
     icon = "",
