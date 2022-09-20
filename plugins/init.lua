@@ -16,14 +16,6 @@ return {
     end,
   },
 
-  -- dim inactive windows
-  ["andreadev-it/shade.nvim"] = {
-    module = "shade",
-    config = function()
-      require("custom.plugins.configs.smolconfigs").shade()
-    end,
-  },
-
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
