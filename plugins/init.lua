@@ -8,6 +8,10 @@ return {
     end,
   },
 
+  ["kyazdani42/nvim-tree.lua"] = {
+    event = "VimEnter",
+  },
+
   -- format & linting
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
