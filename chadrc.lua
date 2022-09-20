@@ -29,7 +29,8 @@ M.plugins = {
 }
 
 M.ui = {
-  theme = "ayu-dark",
+  transparency = true,
+  theme = "rosepine",
   theme_toggle = { "ayu-dark", "one_light" },
   hl_add = require("custom.highlights").new_hlgroups,
   hl_override = require("custom.highlights").overriden_hlgroups,
