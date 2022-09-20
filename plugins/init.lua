@@ -36,4 +36,6 @@ return {
   ["wakatime/vim-wakatime"] = {},
 
   ["rafamadriz/friendly-snippets"] = {},
+
+  ["leafOfTree/vim-vue-plugin"] = {},
 }
