@@ -27,8 +27,7 @@ return {
     disable = false,
   },
 
-
-  ["haringsrob/nvim_context_vt"] = {},
+  -- ["haringsrob/nvim_context_vt"] = {},
 
   ["wakatime/vim-wakatime"] = {},
 
