@@ -27,7 +27,6 @@ return {
     disable = false,
   },
 
-  ["monaqa/dial.nvim"] = {},
 
   ["haringsrob/nvim_context_vt"] = {},
 
