@@ -27,29 +27,4 @@ M.buffer = {
   },
 }
 
-
-M.move = {
-  n = {
-    ["<A-j>"] = { "<cmd> : <CR>", "  move line down", opts = { noremap = true, silent = true } },
-    ["<A-k>"] = { "<cmd> : <CR>", "  move line up", opts = { noremap = true, silent = true } },
-  },
-
-  v = {
-    ["<A-j>"] = { "<cmd> : <CR>", "  move line down", opts = { noremap = true, silent = true } },
-    ["<A-k>"] = { "<cmd> : <CR>", " move line up", opts = { noremap = true, silent = true } },
-  },
-}
-
-M.shade = {
-  n = {
-    ["<leader>s"] = {
-      function()
-        require("shade").toggle()
-      end,
-
-      "   toggle shade.nvim",
-    },
-  },
-}
-
 return M

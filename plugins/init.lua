@@ -16,12 +16,6 @@ return {
     end,
   },
 
-  ["fedepujol/move.nvim"] = {
-    config = function()
-      require("custom.plugins.configs.smolconfigs").move()
-    end,
-  },
-
   -- dim inactive windows
   ["andreadev-it/shade.nvim"] = {
     module = "shade",
