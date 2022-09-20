@@ -27,20 +27,6 @@ M.buffer = {
   },
 }
 
-M.dial = {
-  n = {
-    ["<C-a>"] = {
-      function()
-        require("dial.map").inc_normal()
-      end,
-    },
-    ["<C-x>"] = {
-      function()
-        require("dial.map").dec_normal()
-      end,
-    },
-  },
-}
 
 M.move = {
   n = {
