@@ -1,5 +1,6 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require "lspconfig"
 local servers = { "emmet_ls", "tsserver", "vuels" }
@@ -11,40 +12,24 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.volar.setup {
-  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-  documentFeatures = {
-    documentColor = false,
-    documentSymbol = true,
-    foldingRange = true,
-    linkedEditingRange = true,
-    selectionRange = true,
-  },
-  languageFeatures = {
-    callHierarchy = true,
-    codeAction = true,
-    codeLens = true,
-    completion = {
-      defaultAttrNameCase = "kebabCase",
-      defaultTagNameCase = "both",
-    },
-    definition = true,
-    diagnostics = true,
-    documentHighlight = true,
-    documentLink = true,
-    hover = true,
-    implementation = true,
-    references = true,
-    rename = true,
-    renameFileRefactoring = true,
-    schemaRequestService = true,
-    semanticTokens = false,
-    signatureHelp = true,
-    typeDefinition = true,
-  },
-  typescript = {
-    serverPath = "",
-  },
+lspconfig.emmet_ls.setup {
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "vue" },
 }
 
-lspconfig.vuels.setup {}
+lspconfig.cssls.setup {
+  filetypes = { "css", "scss", "less" },
+}
+
+lspconfig.vuels.setup {
+  init_options = {
+    config = {
+      vetur = {
+        completion = {
+          autoImport = false,
+          tagCasing = "kebab",
+          useScaffoldSnippets = false,
+        },
+      },
+    },
+  },
+}
