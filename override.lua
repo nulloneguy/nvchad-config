@@ -29,6 +29,20 @@ M.nvimtree = {
       show = {
         git = true,
       },
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          default = "",
+          empty = "",
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+      },
     },
   },
 }
@@ -45,6 +59,9 @@ M.blankline = {
     "nvchad_cheatsheet",
     "lsp-installer",
     "mason",
+    "vue",
+    "javascript",
+    "html",
     "",
   },
 }

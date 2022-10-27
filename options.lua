@@ -1,9 +1,4 @@
 local opt = vim.opt
-local g = vim.g
-
--- use filetype.lua instead of filetype.vim
-g.did_load_filetypes = 0
-g.do_filetype_lua = 1
 
 opt.fileencoding = "utf-8"
 

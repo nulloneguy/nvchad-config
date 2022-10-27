@@ -31,7 +31,10 @@ M.plugins = {
 M.ui = {
   transparency = true,
   theme = "rosepine",
-  theme_toggle = { "ayu-dark", "one_light" },
+  theme_toggle = { "resepine", "one_light" },
+  statusline = {
+    separator_style = "round",
+  },
   hl_add = require("custom.highlights").new_hlgroups,
   hl_override = require("custom.highlights").overriden_hlgroups,
 }
